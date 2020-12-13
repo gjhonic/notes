@@ -118,6 +118,9 @@ body{
 	width: 40%;
 	margin: 15px 0 0 5px;
 }
+.display-version:hover{
+	cursor: pointer;
+}
 .display-time{
 	overflow-x: auto;
 	width: 60%;

@@ -6,16 +6,7 @@ var arr_notes = [];
 if (localStorage.getItem('data_note'))
   arr_notes = JSON.parse(localStorage.getItem('data_note'));
 
-//Массив заметок
-//let arr_notes = [];
-
 let System_Data = {
-  version: "0.1.4",
+  version: "0.1.5",
   author: "Андреев Евгений",
 };
-
-//Дополнительные функции
-
-function print(data){
-  console.log(data);
-}
