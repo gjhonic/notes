@@ -68,9 +68,9 @@ function updateDisplay(){
   let display_title_note = document.getElementById('internal-title-note');
   let html_text = "";
   print(arr_notes);
-  if(arr_notes==null){
+  if(arr_notes==null || arr_notes.length == 0){
     arr_notes=[];
-    html_text = "Нет заметок";
+    html_text += "Нет заметок";
   }else{
     arr_notes.forEach(function(item, i, arr) {
       html_text += "<div class='list-internal' onclick='showNote("+i+")'>";
