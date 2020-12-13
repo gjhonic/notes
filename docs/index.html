@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/adaptive.css">
+	<title>Заметки</title>
+	<link rel="shortcut icon" href="https://img.icons8.com/cotton/64/000000/note--v1.png" type="image/png">
+</head>
+<body>
+	<div class="display">
+
+		<div class="display-title"><span id="name-pc"></span></div>
+		<div class="wrapper-internal-system">
+			<div class="display-internal" id="display-internal">
+				<div class="internal-title-note" id="internal-title-note">
+
+				</div>
+				<div class="internal-full-note" id="internal-full-note">
+
+				</div>
+			</div>
+			<div class="display-system">
+				<div class="display-logs" id="display-logs">
+					Логи:<br>
+				</div>
+				<div class="display-info" id="display-info">
+					<div class="display-version" id="display-version"></div>
+					<div id="time" class="display-time" align="right"> </div>
+				</div>
+			</div>
+		</div>
+		<div class='display-panel-buttons'>
+			<span class="display-button" onclick="addNote()">Добавить заметку</span>
+			<span class="display-button" onclick="clearNote()">Очистить заметки</span>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="scripts/data.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
