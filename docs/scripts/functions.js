@@ -1,7 +1,9 @@
 //Возвращает текущую дату
 function NowDate() {
-  let now = new Date()
-  return now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" "+now.getDate()+":"+now.getMonth()+":"+now.getFullYear();
+  let now = new Date();
+  let mont = (parseInt(now.getMonth())+1);
+  mont.toString();
+  return now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" "+now.getDate()+":"+mont+":"+now.getFullYear();
 }
 
 //Возвращает текущее Время
@@ -18,11 +20,13 @@ function addLog(title) {
 
 //Изменение времени на сайте
 function updateClock() {
-    var now = new Date(), // current date
-        time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
-        date = [now.getDate(),
-                now.getMonth(),
-                now.getFullYear()].join(':');
+    var now = new Date(); // current date
+    var mont = (parseInt(now.getMonth())+1);
+    mont.toString()
+    time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
+    date = [now.getDate(),
+              mont,
+              now.getFullYear()].join(':');
     document.getElementById('time').innerHTML = [date, time].join(' / ');
 
     setTimeout(updateClock, 1000);
