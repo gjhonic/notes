@@ -84,7 +84,7 @@ function showNote(id){
       html_text += "<div class='text-full-note'>"+arr_notes[id].text+"</div>";
       html_text += "<div class='date-full-note'>Дата создания "+arr_notes[id].date+"</div>";
       html_text += "<div class='buttons-full-note'>";
-        html_text += "<span class='display-button' onclick='changeNote("+id+")'>Редактировать</span>";
+        html_text += "<span class='display-button' onclick='showFormUpdateNote("+id+")'>Редактировать</span>";
         html_text += "<span class='display-button' onclick='deleteNote("+id+")'>Удалить</span>";
       html_text += "</div>";
       html_text += "</div>";
@@ -95,15 +95,16 @@ function showNote(id){
 
 //Функция изменения заметки
 function changeNote(id){
-  let title_note = prompt("Введите название заметки", arr_notes[id].title);
-  let text_note = prompt("Введите текст заметки '"+title_note+"'", arr_notes[id].text);
+  let title_note = document.getElementById('input-title').value;
+  let text_note = document.getElementById('input-text').value;
 
   arr_notes[id].title = title_note;
   arr_notes[id].text = text_note;
 
   localStorage.setItem('data_note', JSON.stringify(arr_notes));
-  addLog("Changed note '"+ new_note[id].title+"'");
+  addLog("Changed note '"+ arr_notes[id].title+"'");
   arr_notes = JSON.parse(localStorage.getItem('data_note'));
+  clearFormCreateNote();
   updateDisplay();
   showNote(id);
 

@@ -45,6 +45,21 @@ function showFormCreateNote(){
   "</div>";
 }
 
+//Функция рисует форму редактирования заметки
+function showFormUpdateNote(id){
+  let title = arr_notes[id].title;
+  let text = arr_notes[id].text;
+  let formCreateNote = document.getElementById('internal-full-note');
+  formCreateNote.innerHTML = "<div id='form-add-note'>"+
+  "<h3>Редактирование заметки</h3>"+
+  "<label for='input-title'>Название заметки</label>"+
+  "<input type='text' name='title_note' id='input-title' value='"+title+"'><br>"+
+  "<label for='input-text'>Текст заметки</label>"+
+  "<textarea name='text_note' id='input-text'>"+text+"</textarea><br>"+
+  "<button onclick='changeNote("+id+")' id='button-add-note'>Изменить</button>"+
+  "</div>";
+}
+
 //Функция убирает форму добавления заметки
 function clearFormCreateNote(){
     document.getElementById('internal-full-note').innerHTML = '';
