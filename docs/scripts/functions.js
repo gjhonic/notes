@@ -32,6 +32,24 @@ function updateClock() {
     setTimeout(updateClock, 1000);
 }
 
+//Функция рисует форму добавления заметки
+function showFormCreateNote(){
+  let formCreateNote = document.getElementById('internal-full-note');
+  formCreateNote.innerHTML = "<div id='form-add-note'>"+
+  "<h3>Добавление заметки</h3>"+
+  "<label for='input-title'>Название заметки</label>"+
+  "<input type='text' name='title_note' id='input-title'><br>"+
+  "<label for='input-text'>Текст заметки</label>"+
+  "<textarea name='text_note' id='input-text'></textarea><br>"+
+  "<button onclick='saveNote()' id='button-add-note'>Добавить</button>"+
+  "</div>";
+}
+
+//Функция убирает форму добавления заметки
+function clearFormCreateNote(){
+    document.getElementById('internal-full-note').innerHTML = '';
+}
+
 function print(data){
   console.log(data);
 }

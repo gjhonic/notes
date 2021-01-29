@@ -14,12 +14,17 @@ function init() {
 }
 
 //Функция добавления заметки
-function addNote(){
-    let title_note = prompt("Введите название заметки");
-    let text_note = prompt("Введите текст заметки '"+title_note+"'");
+function saveNote(){
+
+    let title_note = document.getElementById('input-title').value;
+    let text_note = document.getElementById('input-text').value;
     let date = new Date();
     let id =  ""+date.getFullYear()+date.getMonth()+date.getDate();
-
+    if(title_note=='' || text_note==''){
+      alert("Поля пустые");
+      clearFormCreateNote();
+      return false;
+    }
     let new_note = {
       date: NowDate(),
       title: title_note,
@@ -32,6 +37,7 @@ function addNote(){
     localStorage.setItem('data_note', JSON.stringify(arr_notes));
     addLog("Сreated note '"+ new_note.title+"'");
     arr_notes = JSON.parse(localStorage.getItem('data_note'));
+    clearFormCreateNote();
     updateDisplay();
 }
 
