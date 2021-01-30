@@ -7,7 +7,7 @@ if (localStorage.getItem('data_note'))
   arr_notes = JSON.parse(localStorage.getItem('data_note'));
 
 let System_Data = {
-  version: "0.1.7",
+  version: "0.1.6",
   author: "Андреев Евгений",
 };
 
