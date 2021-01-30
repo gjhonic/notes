@@ -72,3 +72,7 @@ function print(data){
 function openGitHub(){
   window.location.replace('https://github.com/gjhonic/notes');
 }
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}

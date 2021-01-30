@@ -7,6 +7,11 @@ if (localStorage.getItem('data_note'))
   arr_notes = JSON.parse(localStorage.getItem('data_note'));
 
 let System_Data = {
-  version: "0.1.6",
+  version: "0.1.7",
   author: "Андреев Евгений",
 };
+
+//Полезные массивы
+let DefaultName = [
+  'Рик', "Шнючело", 'Говнокодер', 'Lukoil', 'Grenka', 'Промис', 'Ондий', 'KonoIridan', '<span style="color:red">Dont_Gjhonic</span>', 'Сосика', 'Da', 'ShelHellix'
+]

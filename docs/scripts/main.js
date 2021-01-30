@@ -6,11 +6,14 @@ function init() {
 
   if(notek_username == "" || notek_username == null){
     notek_username = prompt("Введите свое имя");
+    if(notek_username == '' || notek_username == null){
+      let id_name = getRandomInt(0, DefaultName.length);
+      notek_username = DefaultName[id_name];
+    }
     localStorage.setItem('notek_username', notek_username);
   }
   //alert("Добро пожаловать в ваш компьютер "+notek_username)
   document.getElementById('name-pc').innerHTML = notek_username;
-
 }
 
 //Функция добавления заметки
@@ -39,6 +42,19 @@ function saveNote(){
     arr_notes = JSON.parse(localStorage.getItem('data_note'));
     clearFormCreateNote();
     updateDisplay();
+}
+
+function changeUsername(){
+  if(confirm("Вы хотите сменить имя пользователя?")){
+    notek_username = prompt("Введите свое имя");
+    if(notek_username == '' || notek_username == null){
+      let id_name = getRandomInt(0, DefaultName.length);
+      notek_username = DefaultName[id_name];
+    }
+    localStorage.setItem('notek_username', notek_username);
+    location.reload();
+  }
+  return true;
 }
 
 //Функция обновления дисплэя
@@ -81,7 +97,7 @@ function showNote(id){
   }else{
       html_text += "<div>";
       html_text += "<div class='title-full-note'>"+arr_notes[id].title+"</div>";
-      html_text += "<div class='text-full-note'>"+arr_notes[id].text+"</div>";
+      html_text += "<div class='text-full-note'><pre>"+arr_notes[id].text+"</pre></div>";
       html_text += "<div class='date-full-note'>Дата создания "+arr_notes[id].date+"</div>";
       html_text += "<div class='buttons-full-note'>";
         html_text += "<span class='display-button' onclick='showFormUpdateNote("+id+")'>Редактировать</span>";
@@ -118,7 +134,7 @@ function deleteNote(id){
     delete arr_notes[id];
     localStorage.setItem('data_note', JSON.stringify(arr_notes));
     addLog("Deleted note '"+ old_title+"'");
-    updateDisplay();
+    location.reload();
   }
 }
 
