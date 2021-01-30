@@ -15,7 +15,7 @@ function NowTime() {
 //Записывает лог
 function addLog(title) {
     let logs = document.getElementById("display-logs");
-    logs.innerHTML += "["+NowTime()+"]🢒"+title+"<br>";
+    logs.innerHTML += "["+NowTime()+"]"+title+"<br>";
 }
 
 //Изменение времени на сайте
