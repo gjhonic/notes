@@ -6,8 +6,9 @@ var arr_notes = [];
 if (localStorage.getItem('data_note'))
   arr_notes = JSON.parse(localStorage.getItem('data_note'));
 
+//Системная информация
 let System_Data = {
-  version: "0.1.6",
+  version: "0.1.7",
   author: "Андреев Евгений",
 };
 

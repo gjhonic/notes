@@ -65,14 +65,17 @@ function clearFormCreateNote(){
     document.getElementById('internal-full-note').innerHTML = '';
 }
 
+//Печатает в консоль
 function print(data){
   console.log(data);
 }
 
+//Открывает Страницу заметки
 function openGitHub(){
   window.location.replace('https://github.com/gjhonic/notes');
 }
 
+//Возвращает целое число
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
